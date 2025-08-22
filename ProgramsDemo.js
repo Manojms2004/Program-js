@@ -165,3 +165,21 @@ let filVal = array.filter((e) =>{
 console.log(filVal)
 
 //[2, 4, 6]
+
+//Reduce Method
+
+let arr2 = [1,2,3,4]
+
+
+let sum2 = 0;
+let reduced = arr2.reduce((acc,cur) =>{
+  cur = cur * 3
+  if(cur % 2 == 0)
+  {
+      sum2 =  acc + cur
+  }
+  return sum2
+  
+},0)
+
+console.log(reduced)
