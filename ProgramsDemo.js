@@ -85,3 +85,83 @@ else
 {
   console.log(range+" is Even Number")
 }
+
+
+//Promises Example
+
+let val = 4;
+
+let pro = new Promise((res,rej) =>{
+  if(val % 2 != 0)
+  {
+    rej("rejected")
+  }
+  else{
+    res("resolved")
+  }
+})
+
+pro.then((v) =>{
+  console.log(v)
+})
+.catch((e) =>{
+  console.log(e)
+})
+
+
+//Fetching API data using Async and await Method
+
+async function apiDataFetch()
+{
+  let res = await fetch("https://dummyjson.com/todos")
+
+  let data = await res.json()
+
+  console.log(data)
+}
+
+apiDataFetch()
+
+//map() example Demo
+
+let array = [1,2,3,4,5,6]
+
+let sum1 = 0;
+
+array.map((e) =>{
+  if(e % 2 == 0)
+  {
+    sum1 = sum1 + e
+  }
+    
+})
+
+console.log(sum1)
+
+//map() example - 2
+
+let array1 = [1,2,3,4,5,6]
+
+let sum = 0;
+let temp = 0;
+
+array1.map((e) =>{
+    temp = e * 2
+    sum = sum + temp
+})
+
+console.log(sum)
+
+//Filter Method Demo
+
+
+let filVal = array.filter((e) =>{
+  if(e % 2 == 0)
+  {
+    return e
+  }
+})
+
+console.log(filVal)
+
+//[2, 4, 6]
