@@ -183,3 +183,99 @@ let reduced = arr2.reduce((acc,cur) =>{
 },0)
 
 console.log(reduced)
+
+//String Palindrome Checking
+let str2  = "por"
+let rev1 = ""
+
+for(let i = str2.length - 1;i >= 0 ; i--)
+{
+  rev1 = rev1 + str[i]
+}
+if(str2 === rev1)
+{
+  console.log(str2+" is a Palindrome")
+}
+else{
+  console.log(str2+" is not a Palindrome")
+}
+
+//Printing the Unique Elements
+let arr3 = [1, 2, 2, 3, 4, 4, 5];
+let uniqueArr = arr3.filter((item, index) => {
+ return arr3.indexOf(item) === index
+});
+
+console.log(uniqueArr);
+
+//Mulitple ways to fetch data
+
+
+//Method 1 of Api Fetching
+
+async function fetchApiData()
+{
+  let apiData = await fetch("https://dummyjson.com/recipes")
+
+  let data = await apiData.json()
+
+  console.log(data)
+}
+
+fetchApiData()
+ 
+//Method 2 of Api Fetching
+ async function demoApi()
+ {
+    try{
+      let apiRes = await fetch("https://dummyjson.com/recipes")
+
+      let dataVal = await apiRes.json()
+
+      console.log(dataVal)
+    }
+    catch(e){
+
+      console.log(e)
+    }
+ }
+ demoApi()
+
+//Method 3 of Api Fetching
+
+
+function fetchApiJson()
+{
+  fetch("https://dummyjson.com/recipes")
+  .then((res) =>{
+    return res.json()
+  })
+  .then((data) =>{
+    console.log(data)
+  })
+  .catch((e)=>{
+    console.log(e)
+  })
+}
+fetchApiJson()
+
+//Method 4 of Api Fetching
+
+(async function()
+{
+  try{
+    let resi = await fetch("https://dummyjson.com/recipes")
+
+    let data1 = await resi.json()
+
+    console.log(data1)
+  }
+  catch(e){
+    console.log(e)
+  }
+  
+})()
+
+
+
+
